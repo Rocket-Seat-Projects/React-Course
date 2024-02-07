@@ -1,0 +1,49 @@
+/* O root comtem as variaveis com as cores padrões do sistema para eu poder re utilizar nas outras partes do código.
+  O webkit font smoothing serve para embelezar as fontes que não são padrão do sistema.
+*/
+
+:root {
+  --white: #fff;
+  --gray-100: #e1e1e6;
+  --gray-300: #c4c4cc;
+  --gray-400: #8d8d99;
+  --gray-600: #323238;
+  --gray-700: #29292e;
+  --gray-800: #202024;
+  --gray-900: #121214;
+
+  --green-500: #00875f;
+  --red-100: #f75a68;
+}
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--green-500);
+  border-radius: 4px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+}
+body {
+  background-color: var(--gray-900);
+  color: var(--gray-300);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button,
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* Quando eu escrevo 1 rem quer dizer que eu to tornando a aplicação dinamica, pedindo que o css utilize a unidade de medida padrão do html que é 16 pixels de acordo com a tamanho da tela do usuario, ou seja caso o tamanho da tela mude esses 16 pixels muda */

@@ -1,0 +1,14 @@
+/* Quando utilizamos css no react o ideal é colocar sempre classe */
+
+.header {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray-800);
+  padding: 1.25rem 0;
+}
+
+.header img {
+  height: 2rem;
+}

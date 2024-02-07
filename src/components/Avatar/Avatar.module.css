@@ -1,0 +1,33 @@
+.profilePhoto {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 8px;
+  background-color: var(--gray-800);
+  border: solid 0.15rem var(--green-500);
+  margin-left: 2.5rem;
+}
+
+.profilePhoto img {
+  width: 3.068rem;
+  height: 3.068rem;
+  border-radius: 5px;
+  margin: 0.2rem;
+  outline: solid 1px var(--gray-400);
+}
+
+.retireMarginLeft{
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 8px;
+  background-color: var(--gray-800);
+  border: solid 0.15rem var(--green-500);
+}
+
+.retireMarginLeft img{
+  width: 3.068rem;
+  height: 3.068rem;
+  border-radius: 5px;
+  margin: 0.2rem;
+  outline: solid 1px var(--gray-400);
+}
+

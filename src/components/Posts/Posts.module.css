@@ -1,0 +1,119 @@
+.post {
+  grid-area: timeLine;
+  background-color: var(--gray-800);
+  border-radius: 0.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.userInformationOnPost {
+  display: flex;
+  flex-direction: column;
+  margin-left: 7.25rem;
+  gap: 0.3rem;
+}
+.userInformationOnPost span {
+  color: var(--gray-400);
+  font-size: 14px;
+}
+
+.informationAboutPost {
+  display: flex;
+  flex-direction: row;
+  margin-top: -3.2rem;
+}
+
+.publishTime {
+  margin-left: auto;
+  margin-right: 2.5rem;
+  color: var(--gray-400);
+  font-size: 14px;
+}
+
+.postMainContent {
+  text-align: justify;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.postMainContent a {
+  text-decoration: none;
+  color: var(--green-500);
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.contentBorder {
+  border: solid 1px var(--gray-600);
+  max-width: 47rem;
+  margin-top: 1.5rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.leaveYourFeedBack {
+  margin-top: 1.5rem;
+  margin-left: 2.5rem;
+}
+
+.boxToComment {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.boxToComment textarea {
+  width: 100%;
+  height: 6rem;
+  background-color: var(--gray-900);
+  color: var(--white);
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  resize: none;
+  padding: 10px;
+}
+
+.boxToComment textarea::-webkit-scrollbar {
+  background-color: var(--gray-600);
+  border-end-end-radius: 8px;
+  border-start-end-radius: 8px;
+}
+
+.boxToComment textarea::-webkit-scrollbar-thumb {
+  background-color: var(--green-500);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sendButton {
+  visibility: hidden;
+  max-height: 0;
+}
+
+.sendButton {
+  width: 6.75rem;
+  height: 3.0625rem;
+  background-color: var(--green-500);
+  color: var(--white);
+  cursor: pointer;
+  margin-left: 2.5rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.commentForm:focus-within .sendButton {
+  visibility: visible;
+  max-height: none;
+  margin-bottom: 2.5rem;
+}
+
+.post + .post {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .post {
+    grid-area: "timeLine";
+  }
+}

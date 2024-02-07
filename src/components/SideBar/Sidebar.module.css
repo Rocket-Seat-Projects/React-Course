@@ -1,0 +1,70 @@
+/* Para a borda não precisamos utilizar a unidade de medida rem */
+
+.boxHeader {
+  height: 4.5rem;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.boxHeader img {
+  height: 4.5rem;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  background-position: center;
+}
+
+.profilePhoto {
+  display: flex;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  margin-top: -2rem;
+}
+
+.personInformation {
+  width: 7.5rem;
+  margin-top: 2.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.role {
+  color: var(--gray-400);
+  margin-top: 0.25rem;
+  font-size: 14px;
+}
+
+.borderButton {
+  border: solid 1px var(--gray-600);
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+.profileButtonField a {
+  width: 12rem;
+  height: 3.125rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--green-500);
+  cursor: pointer;
+  gap: 0.625rem;
+  text-decoration: none;
+  align-items: center;
+  color: var(--green-500);
+  transition: 0.1s;
+}
+.profileButtonField a:hover {
+  background-color: var(--green-500);
+  transition: 0.1s;
+  color: var(--white);
+}
+
+@media(max-width:768px){
+
+}

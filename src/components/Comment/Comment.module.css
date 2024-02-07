@@ -1,0 +1,80 @@
+.commentMain {
+  display: flex;
+  gap: 1rem;
+}
+
+.commentedBox {
+  flex: 1;
+  height: 7.5rem;
+  background-color: var(--gray-600);
+  margin-right: 2.5rem;
+  border-radius: 9px;
+}
+
+/* Margin: top, right, bottom, left */
+
+.commentedBox div {
+  margin: 1rem 1rem 0rem 1rem;
+}
+
+.commentedBox > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentedBox span {
+  margin-left: 1rem;
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+/* Font size 0 reinicia o tamanho do icone */
+
+.trashIcon {
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--gray-400);
+  font-size: 0;
+}
+
+.trashIcon:hover {
+  color: var(--red-100);
+  transition: 0.5s;
+}
+
+footer div {
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 6.625rem;
+  color: var(--gray-400);
+}
+
+.thumbsUp {
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  background-color: transparent;
+  color: var(--gray-400);
+}
+
+.thumbsUp:hover {
+  color: var(--white);
+  transition: 0.5s;
+}
+
+.thumbsUp span::before{
+  content: "\2022";
+  padding: 0 0.25rem;
+}
+
+.thumbsUp svg {
+  margin-right: 0.5rem;
+  font-size:0;
+}
+
+.commentSection + .commentSection {
+  margin-top: 2.5rem;
+}

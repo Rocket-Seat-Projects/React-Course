@@ -1,0 +1,37 @@
+.wrapper {
+  max-width: 70rem;
+  gap: 2rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-areas: "sideBar timeLine timeLine";
+  align-items: flex-start;
+}
+
+.sideBar {
+  grid-area: sideBar;
+  background-color: var(--gray-800);
+  height: 18.375rem;
+  width: 16rem;
+  border-radius: 0.5rem;
+}
+
+@media(max-width: 768px){
+  /* Colocando o font size nas resoluções em mobile reajusta os TODOS os tamanhos para o celular */
+  html{
+    font-size: 87.5%;
+  }
+
+  .wrapper{
+    grid-template-areas: "sideBar"
+    "timeLine"
+    "timeLine";
+  }
+
+  .sideBar{
+    grid-area: sideBar;
+    width: auto;
+  }
+}
+
+
