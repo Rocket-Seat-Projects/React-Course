@@ -15,7 +15,7 @@
   outline: solid 1px var(--gray-400);
 }
 
-.retireMarginLeft{
+.retireMarginLeft {
   width: 3.75rem;
   height: 3.75rem;
   border-radius: 8px;
@@ -23,7 +23,7 @@
   border: solid 0.15rem var(--green-500);
 }
 
-.retireMarginLeft img{
+.retireMarginLeft img {
   width: 3.068rem;
   height: 3.068rem;
   border-radius: 5px;
@@ -31,3 +31,9 @@
   outline: solid 1px var(--gray-400);
 }
 
+.retireBorder div {
+  border: none;
+}
+.retireBorder div img {
+  outline: none;
+}

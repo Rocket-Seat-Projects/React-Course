@@ -13,7 +13,7 @@ export let Sidebar = () => {
           alt="Imagem de fundo do profile"
         />
         <div className={styles.profilePhoto}>
-          <Avatar retireMarginLeft src="https://github.com/gustavonBrito.png" />
+          <Avatar retireMarginLeft hasBorder src="https://github.com/gustavonBrito.png" />
         </div>
       </div>
       <div className={styles.personInformation}>

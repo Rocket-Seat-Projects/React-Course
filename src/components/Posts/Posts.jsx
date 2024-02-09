@@ -1,44 +1,83 @@
 import { Comment } from "../Comment/Comment";
 import { Avatar } from "../Avatar/Avatar";
+import { format, formatDistanceToNow } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
 import styles from "./Posts.module.css";
+import { useState } from "react";
 
-export let Posts = () => {
+export let Posts = ({ author, content, role, publishedAt }) => {
+  // O use state é usado para monitorar os estados dos elementos em tela, nós passamos como parametro o valor inicial da variavel que queremos alterar.
+
+  const comments = useState([]);
+
+  const dateNormalized = format(publishedAt, `dd' de 'LLLL', 'yyyy`, {
+    locale: ptBR,
+  });
+
+  const publishedDateRealativeToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  });
+
+  let commentsNumber = 0;
+
+  const handleCommentsSubmit = (e) => {
+    e.preventDefault();
+    commentsNumber += 1;
+
+    comments.push(commentsNumber);
+    console.log(comments);
+  };
+
   return (
     <>
       <article className={styles.post}>
         <header>
-          <Avatar src="https://i.pinimg.com/736x/b5/1d/a7/b51da7c67ca0744ef903bd7866101e37.jpg" />
+          <Avatar
+            hasBorder
+            src="https://i.pinimg.com/736x/b5/1d/a7/b51da7c67ca0744ef903bd7866101e37.jpg"
+          />
           <div className={styles.informationAboutPost}>
             <div className={styles.userInformationOnPost}>
-              <strong>Gustavo Silva</strong>
-              <span>Dev Front End</span>
+              <strong>{author}</strong>
+              <span>{role}</span>
             </div>
             <time
-              title="29 de Janeiro,2024"
-              dateTime="2024-29-01 20:14:00"
+              title={dateNormalized}
+              dateTime={publishedAt.toISOString()}
               className={styles.publishTime}
             >
-              <p>Publicado há 1h</p>
+              {publishedDateRealativeToNow}
             </time>
           </div>
         </header>
         <main>
           <div className={styles.postMainContent}>
-            <p>Fala galeraa 👋</p>
-            <p>
-              Acabei de subir mais um projeto no meu portifa. É um projeto que
-              fiz no NLW Return, evento da Rocketseat. O nome do projeto é
-              DoctorCare 🚀
-            </p>
+            {content.map((content) => {
+              if (content.type === "paragraph") {
+                return <p>{content.content}</p>;
+              } else if (content.type === "link") {
+                return (
+                  <p>
+                    <a href={content.content} target="#" rel="#"></a>
+                  </p>
+                );
+              }
+            })}
+
             <a href="">jane.design/doctorcare</a>
             <a href="">#novoprojeto #nlw #rocketseat</a>
           </div>
           <div className={styles.contentBorder}></div>
         </main>
         <footer>
-          <form className={styles.commentForm} action="">
+          <form
+            className={styles.commentForm}
+            action=""
+            onSubmit={handleCommentsSubmit}
+          >
             <div className={styles.leaveYourFeedBack}>
-              <label for="comments">Deixe seu feedback</label>
+              <label>Deixe seu feedback</label>
             </div>
             <div className={styles.boxToComment}>
               <textarea
@@ -51,8 +90,9 @@ export let Posts = () => {
             </button>
           </form>
         </footer>
-        <Comment />
-        <Comment />
+        {comments.map((comment) => {
+          return <Comment />;
+        })}
       </article>
     </>
   );
