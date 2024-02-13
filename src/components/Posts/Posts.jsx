@@ -36,8 +36,15 @@ export let Posts = ({ author, content, role, publishedAt }) => {
 
   // O set content of text area acima está retornando o valor de content of text area para string vazia. esse valor está sendo jogado no text area.
 
-  const deleteComment = (algumaCoisa) => {
-    console.log(algumaCoisa);
+  const deleteComment = (boxCommentToDelete) => {
+    /* console.log(boxCommentToDelete); */
+    const newArrayOfComments = comments.filter((comment) =>
+      comment != boxCommentToDelete
+    )
+    setComments([...newArrayOfComments, newArrayOfComments]);
+    console.log(comments);
+    /* console.log(newArrayOfComments); */
+    /* console.log(newArrayOfComments); */
     /* setComments([...comments, ]) */
   };
 

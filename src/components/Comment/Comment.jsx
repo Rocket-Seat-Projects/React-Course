@@ -17,6 +17,10 @@ export let Comment = ({ content, deleteComment }) => {
     return commentToExclude;
   }; */
 
+  const handleDeleteComment = () => {
+    deleteComment(content);
+  };
+
   return (
     <>
       <div className={styles.commentSection}>
@@ -28,8 +32,8 @@ export let Comment = ({ content, deleteComment }) => {
           <div className={styles.commentedBox}>
             <div>
               <strong>Gustavo</strong>
-              <button className={styles.trashIcon}              title="Deletar comentário"
-                onClick={deleteComment}
+              <button className={styles.trashIcon} title="Deletar comentário"
+                onClick={handleDeleteComment}
               >
                 <Trash size={"24"} />
               </button>
