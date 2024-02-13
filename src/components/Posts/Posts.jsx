@@ -8,7 +8,9 @@ import { useState } from "react";
 export let Posts = ({ author, content, role, publishedAt }) => {
   // O use state é usado para monitorar os estados dos elementos em tela, nós passamos como parametro o valor inicial da variavel que queremos alterar.
 
-  const comments = useState([]);
+  const [comments, setComments] = useState([]);
+
+  const [contentOfTextArea, setContentOfTextArea] = useState("");
 
   const dateNormalized = format(publishedAt, `dd' de 'LLLL', 'yyyy`, {
     locale: ptBR,
@@ -18,15 +20,25 @@ export let Posts = ({ author, content, role, publishedAt }) => {
     locale: ptBR,
     addSuffix: true,
   });
-
-  let commentsNumber = 0;
+  // A função abaixo monitora oq está sendo escrito na text area e armazena na variavel contentOfTextArea, o monitoramento é feito atraves do on change. da forma que eu uso o set abaixo ele pega o ultimo valor registrado pelo on change.
+  const handleCommentsChanges = (e) => {
+    setContentOfTextArea(e.target.value);
+  };
 
   const handleCommentsSubmit = (e) => {
     e.preventDefault();
-    commentsNumber += 1;
 
-    comments.push(commentsNumber);
-    console.log(comments);
+    /* ...comments, isso se chama spread operator, o react pega os elementos que ja estão dentro do array e adiciona um elemento a frente do ultimo elemento do arary. */
+    /* Para inserir algum elemento em um array é preciso declarar o set da forma abaixo, com uma chaves dentro do mesmo. O set espera receber o tipo da variavel declarada no momento do use State */
+    setComments([...comments, contentOfTextArea]);
+    setContentOfTextArea("");
+  };
+
+  // O set content of text area acima está retornando o valor de content of text area para string vazia. esse valor está sendo jogado no text area.
+
+  const deleteComment = (algumaCoisa) => {
+    console.log(algumaCoisa);
+    /* setComments([...comments, ]) */
   };
 
   return (
@@ -55,10 +67,10 @@ export let Posts = ({ author, content, role, publishedAt }) => {
           <div className={styles.postMainContent}>
             {content.map((content) => {
               if (content.type === "paragraph") {
-                return <p>{content.content}</p>;
+                return <p key={content.content}>{content.content}</p>;
               } else if (content.type === "link") {
                 return (
-                  <p>
+                  <p key={content.content}>
                     <a href={content.content} target="#" rel="#"></a>
                   </p>
                 );
@@ -73,7 +85,7 @@ export let Posts = ({ author, content, role, publishedAt }) => {
         <footer>
           <form
             className={styles.commentForm}
-            action=""
+            name="content"
             onSubmit={handleCommentsSubmit}
           >
             <div className={styles.leaveYourFeedBack}>
@@ -83,6 +95,9 @@ export let Posts = ({ author, content, role, publishedAt }) => {
               <textarea
                 placeholder="Escreva seu comentário"
                 className={styles.comments}
+                name="content"
+                value={contentOfTextArea}
+                onChange={handleCommentsChanges}
               />
             </div>
             <button className={styles.sendButton} type="submit">
@@ -91,7 +106,7 @@ export let Posts = ({ author, content, role, publishedAt }) => {
           </form>
         </footer>
         {comments.map((comment) => {
-          return <Comment />;
+          return <Comment key={content.content} content={comment} deleteComment={deleteComment} />
         })}
       </article>
     </>

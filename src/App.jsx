@@ -17,6 +17,7 @@ import styles from "./App.module.css";
 function App() {
   const posts = [
     {
+      id: 1,
       author: "Gustavo Brito",
       post: [
         { type: "paragraph", content: "Fala galeraa 👋" },
@@ -31,6 +32,7 @@ function App() {
       publishedAt: new Date("2024-02-09 11:29:00"),
     },
     {
+      id: 2,
       author: "Gustavo Silva",
       post: [
         { type: "paragraph", content: "Fala galeraa 👋" },
@@ -56,6 +58,7 @@ function App() {
           {posts.map((post) => {
             return (
               <Posts
+                key={post.id}
                 author={post.author}
                 content={post.post}
                 role={post.role}

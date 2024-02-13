@@ -4,7 +4,19 @@ import { Trash, ThumbsUp } from "phosphor-react";
 
 import { Avatar } from "../Avatar/Avatar";
 
-export let Comment = () => {
+import { useState } from "react";
+
+export let Comment = ({ content, deleteComment }) => {
+
+
+  /*   const [commentToExclude, setCommentToExclude] = useState([allComments]);
+
+  const excludeAComment = () => {
+    console.log(commentToExclude);
+    setCommentToExclude(commentToExclude.length - 1);
+    return commentToExclude;
+  }; */
+
   return (
     <>
       <div className={styles.commentSection}>
@@ -16,11 +28,14 @@ export let Comment = () => {
           <div className={styles.commentedBox}>
             <div>
               <strong>Gustavo</strong>
-              <button className={styles.trashIcon} title="Deletar comentário">
+              <button className={styles.trashIcon}              title="Deletar comentário"
+                onClick={deleteComment}
+              >
                 <Trash size={"24"} />
               </button>
             </div>
             <span>Cerca de 1 h</span>
+            <p>{content}</p>
           </div>
         </main>
         <footer>

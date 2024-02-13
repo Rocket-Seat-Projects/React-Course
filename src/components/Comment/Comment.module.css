@@ -5,7 +5,7 @@
 
 .commentedBox {
   flex: 1;
-  height: 7.5rem;
+  min-height: 7.5rem;
   background-color: var(--gray-600);
   margin-right: 2.5rem;
   border-radius: 9px;
@@ -25,6 +25,13 @@
 .commentedBox span {
   margin-left: 1rem;
   font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+.commentedBox p{
+  margin-top:1rem;
+  margin-left: 1rem;
+  font-size: 1rem;
   color: var(--gray-400);
 }
 
