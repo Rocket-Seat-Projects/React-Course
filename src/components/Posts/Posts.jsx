@@ -37,15 +37,15 @@ export let Posts = ({ author, content, role, publishedAt }) => {
   // O set content of text area acima está retornando o valor de content of text area para string vazia. esse valor está sendo jogado no text area.
 
   const deleteComment = (boxCommentToDelete) => {
-    /* console.log(boxCommentToDelete); */
-    const newArrayOfComments = comments.filter((comment) =>
-      comment != boxCommentToDelete
-    )
-    setComments([...newArrayOfComments, newArrayOfComments]);
-    console.log(comments);
-    /* console.log(newArrayOfComments); */
-    /* console.log(newArrayOfComments); */
-    /* setComments([...comments, ]) */
+
+    const newArrayOfComments = comments.filter(
+      (comment) => comment != boxCommentToDelete
+    );
+    if (newArrayOfComments.length == 0) {
+      setComments([]);
+    } else {
+      setComments(newArrayOfComments);
+    }
   };
 
   return (
@@ -113,7 +113,13 @@ export let Posts = ({ author, content, role, publishedAt }) => {
           </form>
         </footer>
         {comments.map((comment) => {
-          return <Comment key={content.content} content={comment} deleteComment={deleteComment} />
+          return (
+            <Comment
+              key={content.content}
+              content={comment}
+              deleteComment={deleteComment}
+            />
+          );
         })}
       </article>
     </>

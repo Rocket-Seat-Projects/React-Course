@@ -48,7 +48,15 @@ function App() {
     },
   ];
   return (
-    <div>
+    <div className={styles.app}>
+      <dialog>
+        <h1>Excluir comentário</h1>
+        <p>Você tem certeza que gostaria de excluir este comentário?</p>
+        <div className={styles.buttonDialog}>
+          <button className={styles.cancelButton}>Cancelar</button>
+          <button className={styles.excludeButton}>Sim, excluir</button>
+        </div>
+      </dialog>
       <Header />
       <div className={styles.wrapper}>
         <aside className={styles.sideBar}>
