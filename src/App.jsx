@@ -10,6 +10,8 @@ import { Sidebar } from "./components/SideBar/Sidebar";
 
 import { Posts } from "./components/Posts/Posts";
 
+import { Modal } from "./components/Modal/Modal";
+
 import "./global.css";
 
 import styles from "./App.module.css";
@@ -48,15 +50,8 @@ function App() {
     },
   ];
   return (
-    <div className={styles.app}>
-      <dialog>
-        <h1>Excluir comentário</h1>
-        <p>Você tem certeza que gostaria de excluir este comentário?</p>
-        <div className={styles.buttonDialog}>
-          <button className={styles.cancelButton}>Cancelar</button>
-          <button className={styles.excludeButton}>Sim, excluir</button>
-        </div>
-      </dialog>
+    <div>
+      <Modal hasModal={false} />
       <Header />
       <div className={styles.wrapper}>
         <aside className={styles.sideBar}>

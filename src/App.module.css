@@ -16,40 +16,6 @@
   border-radius: 0.5rem;
 }
 
-dialog {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  top: 50dvh;
-  background-color: red;
-  color: var(--white);
-  gap: 1.5rem;
-  align-items: center;
-  border-radius: 0.5rem;
-  height: 14.875rem;
-}
-dialog h1 {
-  margin-top: 1.5rem;
-}
-
-dialog p {
-  text-align: justify;
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.buttonDialog {
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-/* .cancelButton{
-} */
-
 @media (max-width: 768px) {
   /* Colocando o font size nas resoluções em mobile reajusta os TODOS os tamanhos para o celular */
   html {
