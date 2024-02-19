@@ -27,7 +27,8 @@ export let Posts = ({ author, content, role, publishedAt }) => {
 
   const handleCommentsSubmit = (e) => {
     e.preventDefault();
-
+    if (contentOfTextArea.length == 0) {
+    }
     /* ...comments, isso se chama spread operator, o react pega os elementos que ja estão dentro do array e adiciona um elemento a frente do ultimo elemento do arary. */
     /* Para inserir algum elemento em um array é preciso declarar o set da forma abaixo, com uma chaves dentro do mesmo. O set espera receber o tipo da variavel declarada no momento do use State */
     setComments([...comments, contentOfTextArea]);
@@ -37,7 +38,6 @@ export let Posts = ({ author, content, role, publishedAt }) => {
   // O set content of text area acima está retornando o valor de content of text area para string vazia. esse valor está sendo jogado no text area.
 
   const deleteComment = (boxCommentToDelete) => {
-
     const newArrayOfComments = comments.filter(
       (comment) => comment != boxCommentToDelete
     );
@@ -107,7 +107,11 @@ export let Posts = ({ author, content, role, publishedAt }) => {
                 onChange={handleCommentsChanges}
               />
             </div>
-            <button className={styles.sendButton} type="submit">
+            <button
+              className={styles.sendButton}
+              disabled={contentOfTextArea.length == 0 ? true : false}
+              type="submit"
+            >
               <strong>Publicar</strong>
             </button>
           </form>

@@ -112,6 +112,11 @@
   margin-top: 2.5rem;
 }
 
+.sendButton:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
   .post {
     grid-area: "timeLine";

@@ -28,8 +28,8 @@
   color: var(--gray-400);
 }
 
-.commentedBox p{
-  margin-top:1rem;
+.commentedBox p {
+  margin-top: 1rem;
   margin-left: 1rem;
   font-size: 1rem;
   color: var(--gray-400);
@@ -72,16 +72,21 @@ footer div {
   transition: 0.5s;
 }
 
-.thumbsUp span::before{
+.thumbsUp span::before {
   content: "\2022";
   padding: 0 0.25rem;
 }
 
 .thumbsUp svg {
   margin-right: 0.5rem;
-  font-size:0;
+  font-size: 0;
 }
 
 .commentSection + .commentSection {
   margin-top: 2.5rem;
+}
+
+.notAllowed {
+  display: none;
+  color: var(--red-100);
 }
